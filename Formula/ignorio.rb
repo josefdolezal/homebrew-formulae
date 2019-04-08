@@ -1,11 +1,10 @@
 class Ignorio < Formula
   desc "Gitignore.io command-line client written in Swift"
   homepage "https://github.com/josefdolezal/ignorio"
-  url "https://github.com/josefdolezal/ignorio/archive/0.5.2.tar.gz"
-  sha256 "df55c300e35e6e1877c0b9ec4ddea008f8f681d154cc4f471ab6c81c21aad4a3"
+  url "https://github.com/josefdolezal/ignorio/archive/0.6.0.tar.gz"
+  sha256 "2f4bf49a6359bc371505f65daae1c78c6f94df4c42681ac733b77effcdbd5edc"
 
-  depends_on "cmake" => :build
-  depends_on :xcode => ["9.0", :build]
+  depends_on :xcode => ["10.2", :build]
 
   def install
     system "make", "release"
