@@ -5,20 +5,22 @@
 class Appctl < Formula
   desc "JSON-first CLI for iOS Simulators and Android devices"
   homepage "https://github.com/josefdolezal/appctl"
-  version "0.0.1"
+  version "0.0.2"
+
+  depends_on "facebook/fb/idb-companion" if OS.mac?
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.1/appctl_0.0.1_darwin_amd64.tar.gz"
-      sha256 "f6a364d364a895d334857ab7e57b2886c31beeb12318294ed20d16f8e6db8908"
+      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.2/appctl_0.0.2_darwin_amd64.tar.gz"
+      sha256 "4e65330ae720c04f2f656255cbac259e25786ea6d8ce915dbe147dda54838349"
 
       define_method(:install) do
         bin.install "appctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.1/appctl_0.0.1_darwin_arm64.tar.gz"
-      sha256 "232d9af0c9f8a29d47a311091c51a510d1170e900c72af7072bcc71c5fc8ca85"
+      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.2/appctl_0.0.2_darwin_arm64.tar.gz"
+      sha256 "6aab43df7b1f43c0fb7112d6519dda1d7e7b01df6d463771f699969b8d9a70e9"
 
       define_method(:install) do
         bin.install "appctl"
@@ -28,19 +30,31 @@ class Appctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.1/appctl_0.0.1_linux_amd64.tar.gz"
-      sha256 "231b4ce5d81f88ed4c5f749e4839e3d38b37089dc325e4ef8a1df474e34d3874"
+      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.2/appctl_0.0.2_linux_amd64.tar.gz"
+      sha256 "5a65e0b5a0e87192b7bd63d4ccb50b5c19519a1608307338c26e3e0c0585b8c8"
       define_method(:install) do
         bin.install "appctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.1/appctl_0.0.1_linux_arm64.tar.gz"
-      sha256 "993588a7c97080ac2ab9d155a5b4de406a275b95d831b32486b3883dbc6661b3"
+      url "https://github.com/josefdolezal/appctl/releases/download/v0.0.2/appctl_0.0.2_linux_arm64.tar.gz"
+      sha256 "26cce8125b2b649581f77439470cf6857e0675df28d166be69627fb12705f444"
       define_method(:install) do
         bin.install "appctl"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      appctl auto-installs facebook/fb/idb-companion on macOS.
+
+      Install the remaining runtime tools manually:
+        brew install --cask android-platform-tools
+        python3 -m pip install fb-idb
+
+      iOS simulator support also requires Xcode or Xcode Command Line Tools for xcrun simctl.
+    EOS
   end
 
   test do
