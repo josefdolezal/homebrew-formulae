@@ -5,23 +5,23 @@
 class Crew < Formula
   desc "Orchestrate interactive coding-agent sessions (Claude Code, Codex, pi) in tmux"
   homepage "https://github.com/josefdolezal/crew"
-  version "0.2.4"
+  version "0.3.0"
   license "MIT"
 
   depends_on "tmux"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/josefdolezal/crew/releases/download/v0.2.4/crew_0.2.4_darwin_amd64.tar.gz"
-      sha256 "cda60d8ccd5e43718be01c6bc2e4ae883b2c65bb9734c62a5d179aad0838b37d"
+      url "https://github.com/josefdolezal/crew/releases/download/v0.3.0/crew_0.3.0_darwin_amd64.tar.gz"
+      sha256 "8396d8a31b92ad5af2fb66bf6499c29debd02b69a106e7fed38d61a787a4a2d4"
 
       define_method(:install) do
         bin.install "crew"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/josefdolezal/crew/releases/download/v0.2.4/crew_0.2.4_darwin_arm64.tar.gz"
-      sha256 "a528937062a70028281e67fb7e8f55309ba02d195a6407123ed52ab0197d47e8"
+      url "https://github.com/josefdolezal/crew/releases/download/v0.3.0/crew_0.3.0_darwin_arm64.tar.gz"
+      sha256 "069ca960c866506849514a052ff665fb581428e3481081fac95a4ea5594534f7"
 
       define_method(:install) do
         bin.install "crew"
@@ -31,15 +31,15 @@ class Crew < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/crew/releases/download/v0.2.4/crew_0.2.4_linux_amd64.tar.gz"
-      sha256 "6e7ee072141b87b8a9fd03dcbb0a00d2bbca6ec5265cb691c7caf6a1320ff147"
+      url "https://github.com/josefdolezal/crew/releases/download/v0.3.0/crew_0.3.0_linux_amd64.tar.gz"
+      sha256 "48b4beaafe7f4619c5ddda865ad0424ae6cbd9df62a72f92b28812c92ee1b84c"
       define_method(:install) do
         bin.install "crew"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/crew/releases/download/v0.2.4/crew_0.2.4_linux_arm64.tar.gz"
-      sha256 "a421fe9e2e38b9a7af99c3886841d2bda5318a048d02fd3600187e06a9099fa2"
+      url "https://github.com/josefdolezal/crew/releases/download/v0.3.0/crew_0.3.0_linux_arm64.tar.gz"
+      sha256 "a711437b86a2932f273007eb7b6b114caa60f48adde3480d2d2634028c25fd71"
       define_method(:install) do
         bin.install "crew"
       end
