@@ -5,21 +5,21 @@
 class Unpkgo < Formula
   desc "Download, inspect, decrypt, and extract PlayStation PKG files"
   homepage "https://github.com/josefdolezal/unPKGo"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.0/unpkgo_0.1.0_darwin_amd64.tar.gz"
-      sha256 "489144e9d4727e102c12d15b4763f506f2846aff062530d8def6760f969822b4"
+      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.1/unpkgo_0.1.1_darwin_amd64.tar.gz"
+      sha256 "cf80bc49567ab6f3387a59c8d0ecb505c7a784b0aa049083cf17d7554d56a78e"
 
       define_method(:install) do
         bin.install "unpkgo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.0/unpkgo_0.1.0_darwin_arm64.tar.gz"
-      sha256 "da4711e8bdb7bc56743678d2b7d0db2c1e8c36da180469f49c87abbbf3e7fb8e"
+      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.1/unpkgo_0.1.1_darwin_arm64.tar.gz"
+      sha256 "558b312137313afeef586b3f6fa222b2ddb74581b3ef2d3bf239dccef95ec35e"
 
       define_method(:install) do
         bin.install "unpkgo"
@@ -29,15 +29,15 @@ class Unpkgo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.0/unpkgo_0.1.0_linux_amd64.tar.gz"
-      sha256 "47f72d6f84c02d042f4b17947eabc670aab78c7d36ac379f0f5d52ac095e2e9f"
+      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.1/unpkgo_0.1.1_linux_amd64.tar.gz"
+      sha256 "bf2b2c5b61626749714882f6225f58ee45b13c8246e37db18157c94fc09fa62c"
       define_method(:install) do
         bin.install "unpkgo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.0/unpkgo_0.1.0_linux_arm64.tar.gz"
-      sha256 "0de41902593078ce614081931ce428c62e4172894fddb67235f4e1a71eefadae"
+      url "https://github.com/josefdolezal/unPKGo/releases/download/v0.1.1/unpkgo_0.1.1_linux_arm64.tar.gz"
+      sha256 "880eb3e8d06b917ce45238481048d8304a016477b14bd3be91a1d03667dde3f9"
       define_method(:install) do
         bin.install "unpkgo"
       end
